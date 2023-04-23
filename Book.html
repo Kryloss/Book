@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Пример текстового поля с сохранением</title>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            // Получаем текстовое поле и устанавливаем обработчик события изменения его содержимого
+            var textField = document.getElementById('text-field');
+            textField.addEventListener('input', function () {
+                // Сохраняем содержимое текстового поля в локальном хранилище
+                localStorage.setItem('savedText', textField.value);
+            });
+
+            // Восстанавливаем сохраненное значение текстового поля при загрузке страницы
+            var savedText = localStorage.getItem('savedText');
+            if (savedText) {
+                textField.value = savedText;
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <form>
+        <label for="text-field">Введите текст:</label>
+        <input type="text" id="text-field" name="text-field">
+    </form>
+</body>
+
+</html>
