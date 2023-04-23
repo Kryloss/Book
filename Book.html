@@ -1,31 +1,72 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Пример текстового поля с сохранением</title>
-    <script>
-        window.addEventListener('DOMContentLoaded', function () {
-            // Получаем текстовое поле и устанавливаем обработчик события изменения его содержимого
-            var textField = document.getElementById('text-field');
-            textField.addEventListener('input', function () {
-                // Сохраняем содержимое текстового поля в локальном хранилище
-                localStorage.setItem('savedText', textField.value);
-            });
-
-            // Восстанавливаем сохраненное значение текстового поля при загрузке страницы
-            var savedText = localStorage.getItem('savedText');
-            if (savedText) {
-                textField.value = savedText;
-            }
-        });
-    </script>
+	<title>Мой сайт</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		header {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+		}
+		nav {
+			background-color: #eee;
+			padding: 10px;
+		}
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		nav ul li {
+			display: inline-block;
+			margin-right: 20px;
+		}
+		nav ul li a {
+			color: #333;
+			text-decoration: none;
+			padding: 5px;
+		}
+		nav ul li a:hover {
+			background-color: #333;
+			color: #fff;
+		}
+		.content {
+			margin: 20px;
+			padding: 20px;
+			background-color: #fff;
+			border: 1px solid #ccc;
+			min-height: 400px;
+		}
+		footer {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+		}
+	</style>
 </head>
-
 <body>
-    <form>
-        <label for="text-field">Введите текст:</label>
-        <input type="text" id="text-field" name="text-field">
-    </form>
+	<header>
+		<h1>Мой сайт</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="index.html">Главная</a></li>
+			<li><a href="ideas.html">Идеи</a></li>
+			<li><a href="chapters.html">Главы</a></li>
+		</ul>
+	</nav>
+	<div class="content">
+		<h2>Добро пожаловать на мой сайт</h2>
+		<p>Здесь вы найдете много интересной информации о различных темах.</p>
+	</div>
+	<footer>
+		<p>Copyright © Мой сайт</p>
+	</footer>
 </body>
-
 </html>
